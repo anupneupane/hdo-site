@@ -97,6 +97,10 @@ module Admin::IssuesHelper
     counts
   end
 
+  def promise_override_options
+    options_for_select
+  end
+
   def with_promise_status(promises)
     promises.map { |pr| [pr, promise_status_for(pr)] }.sort_by { |_, status| status }
   end

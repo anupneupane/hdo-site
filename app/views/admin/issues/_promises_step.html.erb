@@ -29,6 +29,13 @@
                     <%= t("app.issues.edit.promise.#{current_status}") %>
                   <% end %>
                 </div>
+
+                <div>
+                  <% promise_override_options.each do |label| %>
+                    <%= radio_button_tag "promises[#{promise.id}][override]", current_override %>
+                    <%= label %>
+                  <% end %>
+                </div>
               </div>
             </div>
             <hr>
