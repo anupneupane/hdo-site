@@ -1,0 +1,20 @@
+<div class="row-fluid" style="text-align: center">
+  <div id="countdown"></div>
+  <p>til Stortinget åpner</p>
+</div>
+
+<% content_for :document_ready do %>
+<script>
+  var date, cb, element, timerId;
+
+  date = new Date(2013, 9, 9);
+  console.log(date);
+  element = $("#countdown")
+
+  cb = function (ts) {
+    element.html(ts.toHTML("strong"));
+  };
+
+  timerId = countdown(date, cb, countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS);
+  </script>
+<% end %>
